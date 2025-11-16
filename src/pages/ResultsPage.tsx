@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Dialog, DialogContent, IconButton, Box } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { Grid, Card, CardMedia, CardContent, Typography } from '@mui/material';
+import { Grid, Card, CardMedia } from '@mui/material';
 
 export default function ResultsPage() {
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -10,7 +10,6 @@ export default function ResultsPage() {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [selectedMovie, setSelectedMovie] = useState<any | null>(null);
-  const [trailerKey, setTrailerKey] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
@@ -54,17 +53,15 @@ export default function ResultsPage() {
   const handleCardClick = (movie: any) => {
     Promise.all([
       fetch(`${BASE_URL}/movies/${movie.id}`).then(res => res.json()),
-      fetch(`${BASE_URL}/movies/${movie.id}/trailers`).then(res => res.json())
-    ]).then(([movieDetails, trailers]) => {
+      // fetch(`${BASE_URL}/movies/${movie.id}/trailers`).then(res => res.json())
+    ]).then(([movieDetails]) => {
       setSelectedMovie(movieDetails);
-      const trailer = (trailers || []).find((v: any) => v.site === 'YouTube' && v.type === 'Trailer');
-      setTrailerKey(trailer ? trailer.key : null);
+      // const trailer = (trailers || []).find((v: any) => v.site === 'YouTube' && v.type === 'Trailer');
     });
   };
 
   const handleClose = () => {
     setSelectedMovie(null);
-    setTrailerKey(null);
   };
 
   return (
