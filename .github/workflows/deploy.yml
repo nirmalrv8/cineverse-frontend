@@ -6,11 +6,16 @@ on:
       environment:
         description: 'Deployment environment'
         required: true
-        default: 'production'
+        default: 'development'
         type: choice
         options:
           - development
           - staging
+      api_base_url:
+        description: 'API Base URL'
+        required: true
+        type: string
+        default: 'http://localhost:3000/api'
 
 jobs:
   build-and-deploy:
@@ -31,7 +36,7 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo "VITE_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }}" > .env
+          echo "VITE_API_BASE_URL=${{ github.event.inputs.api_base_url }}" > .env
 
       - name: Build React app
         run: npm run build
