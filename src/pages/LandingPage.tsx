@@ -49,6 +49,7 @@ export default function LandingPage() {
               <Checkbox
                 checked={selectedGenres.includes(String(genre.id))}
                 onChange={() => handleGenreChange(String(genre.id))}
+                sx={{ color: '#fff', '&.Mui-checked': { color: '#fff' } }}
               />
             }
             label={genre.name}
