@@ -1,3 +1,21 @@
+
+This is the frontend of cineverse.
+First it will fetch the genres from the backend.
+The user can select any of the genres and find movies.
+Then, it will fetch movies paginated from the backend.
+When user scrolls down, it will automatically fetch more movies from the backend.
+Any movie's details can be shown by clicking on it.
+
+<img width="1485" height="684" alt="image" src="https://github.com/user-attachments/assets/a6007c57-ac7b-431e-b8bc-f663a80c7c8f" />
+
+<img width="1787" height="857" alt="image" src="https://github.com/user-attachments/assets/2d0d3afa-0df2-448f-947a-b52cc363839b" />
+
+<img width="1847" height="825" alt="image" src="https://github.com/user-attachments/assets/5be556ba-3b3c-4cf0-89c3-f4b34d30521b" />
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
