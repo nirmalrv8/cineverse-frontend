@@ -1,91 +1,44 @@
+# CineVerse Frontend
 
-This is the frontend of cineverse.
-First it will fetch the genres from the backend.
-The user can select any of the genres and find movies.
-Then, it will fetch movies paginated from the backend.
-When user scrolls down, it will automatically fetch more movies from the backend.
-Any movie's details can be shown by clicking on it.
+The web frontend for **CineVerse**, a movie discovery application. Users can filter movies by genre, browse results with infinite scrolling, and view detailed movie information.
 
-<img width="1485" height="684" alt="image" src="https://github.com/user-attachments/assets/a6007c57-ac7b-431e-b8bc-f663a80c7c8f" />
+## Features
 
-<img width="1787" height="857" alt="image" src="https://github.com/user-attachments/assets/2d0d3afa-0df2-448f-947a-b52cc363839b" />
+* **Dynamic Genre Filtering:** Fetches available genres from the backend and lets users select one or multiple genres to search for movies.
+* **Infinite Scroll Pagination:** Loads paginated movie results from the backend and automatically fetches more titles as the user scrolls down.
+* **Movie Details Modal:** Displays release date, runtime, tagline, user ratings, and plot overview when a user clicks on any movie poster.
 
-<img width="1847" height="825" alt="image" src="https://github.com/user-attachments/assets/5be556ba-3b3c-4cf0-89c3-f4b34d30521b" />
+## Screenshots
 
+### 1. Genre Selection
+<img width="1485" height="684" alt="CineVerse genre selection screen" src="https://github.com/user-attachments/assets/a6007c57-ac7b-431e-b8bc-f663a80c7c8f" />
 
+### 2. Movie Discovery Grid
+<img width="1787" height="857" alt="CineVerse movie poster grid" src="https://github.com/user-attachments/assets/2d0d3afa-0df2-448f-947a-b52cc363839b" />
 
+### 3. Movie Details View
+<img width="1847" height="825" alt="CineVerse movie details modal showing The Batman" src="https://github.com/user-attachments/assets/5be556ba-3b3c-4cf0-89c3-f4b34d30521b" />
 
+## Getting Started
 
-# React + TypeScript + Vite
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/nirmalrv8/cineverse-frontend.git
+   cd cineverse-frontend
+   ```
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-Currently, two official plugins are available:
+3. **Configure environment variables:**
+   Create a `.env` file in the root directory and add your backend API URL:
+   ```env
+   VITE_API_BASE_URL="http://localhost:3000/api"
+   ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
